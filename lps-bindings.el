@@ -13,6 +13,7 @@
 (global-set-key (kbd "C-<") 'previous-window)
 (global-set-key (kbd "C->") 'other-window)
 (global-set-key (kbd "C-x C-d") 'dired)
+(global-set-key (kbd "<f12>") 'toggle-maximize)
 (global-set-key (kbd "<f10>") (lambda () (interactive) (ansi-term "/bin/bash")))
 (global-set-key (kbd "<f5>") 'first-error)
 (global-set-key (kbd "<f6>") 'recompile)

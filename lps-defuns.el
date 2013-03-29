@@ -36,4 +36,10 @@
                     nil))))))
 
 
+(defun lps/nicer-ansi-term ()
+  "Change ansi-term color to nicer ones"
+  (interactive)
+  (setq ansi-term-color-vector [unspecified "black" "orange red" "chartreuse" "yellow" "royal blue" "magenta" "turquoise" "white"]))
+
+
 (provide 'lps-defuns)

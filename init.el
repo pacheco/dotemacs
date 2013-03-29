@@ -26,5 +26,6 @@
 
 ;; load other configuration files
 (require 'lps-default-packages)
+(require 'lps-configs)
 (require 'lps-defuns)
 (require 'lps-bindings)
