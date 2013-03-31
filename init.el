@@ -19,13 +19,16 @@
 ;; setup elpa
 (setq package-user-dir (concat dotemacs-dir "elpa"))
 (require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+(setq package-archives '(
 			 ;("marmalade" . "http://marmalade-repo.org/packages/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")))
+			 ("melpa" . "http://melpa.milkbox.net/packages/")
+             ("gnu" . "http://elpa.gnu.org/packages/")
+             ))
 (package-initialize)
 
 ;; load other configuration files
 (require 'lps-default-packages)
 (require 'lps-configs)
 (require 'lps-defuns)
+(require 'lps-modes)
 (require 'lps-bindings)

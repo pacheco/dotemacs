@@ -1,15 +1,21 @@
-;; Default packages to be loaded. Also downloads some of them from elpa
+;;; Default packages to be loaded
 
-(defvar packages-to-install nil
-  "List of packages to be installed from elpa")
+(defvar elpa-packages '(yasnippet c-eldoc)
+  "Packages to install from elpa")
 
-; common lisp elisp extensions
+(dolist (package elpa-packages)
+  "Install packages from elpa"
+  (unless (or (member package package-activated-list)
+              (functionp package))
+    (package-install package)))
+
+;;; common lisp elisp extensions
 (require 'cl) 
-; recently opened files
+;;; recently opened files
 (require 'recentf)
-; uniquify buffer names
+;;; uniquify buffer names
 (require 'uniquify) 
-; smarter find file at point
+;;; smarter find file at point
 (require 'ffap) 
 (require 'ansi-color)
 
