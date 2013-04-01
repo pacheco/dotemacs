@@ -1,6 +1,7 @@
-;;; Default packages to be loaded
+;;; Default packages to be loaded and/or downloaded from elpa
 
-(defvar elpa-packages '(c-eldoc yasnippet)
+(defvar elpa-packages '(c-eldoc
+                        yasnippet)
   "Packages to install from elpa")
 
 (dolist (package elpa-packages)
@@ -18,5 +19,8 @@
 ;;; smarter find file at point
 (require 'ffap) 
 (require 'ansi-color)
+
+;;; theme stuff
+(require 'subatomic-theme-autoloads)
 
 (provide 'lps-default-packages)
