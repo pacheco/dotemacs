@@ -1,0 +1,2 @@
+${1:var} := make(chan ${2:type})
+$0

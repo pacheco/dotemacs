@@ -19,7 +19,7 @@
 (global-set-key (kbd "<f6>") 'recompile)
 (global-set-key (kbd "<f8>") 'recentf-ido-find-file)
 (global-set-key (kbd "M-/") 'hippie-expand)
-(global-set-key (kbd "C-x TAB") 'yas/expand)
+(global-set-key (kbd "C-x TAB") 'yas-expand)
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 

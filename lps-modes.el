@@ -14,11 +14,11 @@
 (autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook       (lambda ()
-                                        (paredit-mode +1)
-                                        (eldoc-mode +1)))
-(add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
-(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
-(add-hook 'scheme-mode-hook           (lambda () (paredit-mode +1)))
+                                        (paredit-mode t)
+                                        (eldoc-mode t)))
+(add-hook 'lisp-mode-hook             (lambda () (paredit-mode t)))
+(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode t)))
+(add-hook 'scheme-mode-hook           (lambda () (paredit-mode t)))
 
 (eval-after-load 'paredit
   '(progn (define-key paredit-mode-map (kbd "C-w") 'paredit-backward-kill-word)
@@ -31,8 +31,15 @@
 ;;; winner mode
 (winner-mode 1)
 
+;;; yasnippet
+(require 'yasnippet)
+(yas-load-directory "~/.emacs.d/snippets")
+
+
 ;;; go mode
 (require 'go-mode-load)
+(add-hook 'go-mode-hook (lambda ()
+                          (yas-minor-mode t)))
 
 
 (provide 'lps-modes)

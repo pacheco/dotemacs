@@ -23,7 +23,7 @@
 
 ;;; show tooltips inside the echo area
 (tooltip-mode -1)
-(blink-cursor-mode -1)
+(blink-cursor-mode 1)
 
 ;;; not sure if these is necessary
 (set-terminal-coding-system 'utf-8)
@@ -88,9 +88,6 @@
       ido-enable-prefix nil)
 
 (recentf-mode t)
-
-;;; use xft backend
-;;; (set-frame-parameter nil 'font-backend '(xft x))
 
 ;;; open buffers on current window
 ;;; (setq pop-up-windows nil)

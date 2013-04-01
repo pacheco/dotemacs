@@ -1,6 +1,6 @@
 ;;; Default packages to be loaded
 
-(defvar elpa-packages '(yasnippet c-eldoc)
+(defvar elpa-packages '(c-eldoc yasnippet)
   "Packages to install from elpa")
 
 (dolist (package elpa-packages)
