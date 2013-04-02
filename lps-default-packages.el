@@ -1,13 +1,14 @@
 ;;; Default packages to be loaded and/or downloaded from elpa
 
 (defvar elpa-packages '(c-eldoc
-                        yasnippet)
+                        yasnippet
+                        nrepl
+                        w3m)
   "Packages to install from elpa")
 
 (dolist (package elpa-packages)
   "Install packages from elpa"
-  (unless (or (member package package-activated-list)
-              (functionp package))
+  (unless (package-installed-p package)
     (package-install package)))
 
 ;;; common lisp elisp extensions

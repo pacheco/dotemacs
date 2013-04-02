@@ -89,6 +89,9 @@
 
 (recentf-mode t)
 
+;;; default browser
+(setq browse-url-browser-function `((".*" . browse-url-default-browser)))
+
 ;;; open buffers on current window
 ;;; (setq pop-up-windows nil)
 

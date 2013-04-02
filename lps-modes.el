@@ -41,5 +41,15 @@
 (add-hook 'go-mode-hook (lambda ()
                           (yas-minor-mode t)))
 
+;;; clojure
+(require 'nrepl)
+(add-hook 'nrepl-interaction-mode-hook
+          'nrepl-turn-on-eldoc-mode
+          (lambda () (paredit-mode t)))
+
+;; common lisp / slime
+(when (file-exists-p "~/quicklisp")
+  (load (expand-file-name "~/quicklisp/slime-helper.el"))
+  (setq inferior-lisp-program "sbcl"))
 
 (provide 'lps-modes)
