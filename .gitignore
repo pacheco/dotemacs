@@ -15,3 +15,5 @@ tramp
 \#*
 history
 local.el
+semanticdb/*
+ede-projects.el
