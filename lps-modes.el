@@ -1,10 +1,25 @@
 ;; Mode specific configs
 
+;;; cedet and semantic
+(require 'cedet)
+(require 'semantic)
+(require 'semantic/bovine/c)
+(require 'semantic/bovine/gcc)
+(semanticdb-enable-gnu-global-databases 'c-mode)
+(semanticdb-enable-gnu-global-databases 'c++-mode)
+(semantic-add-system-include "~/usr/include/" 'c-mode)
+(semantic-mode 1)
+(global-ede-mode 1)
+(ede-enable-generic-projects)
+
 ;;; c mode
-(setq-default c-basic-offset 4)
 (require 'c-eldoc)
 (setq c-eldoc-includes " -I./ -I../ -I.../  -I./include/ -I../include/ -I../../include/ -I${HOME}/usr/include/ ")
-(add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
+(setq-default c-basic-offset 4)
+(add-hook 'c-mode-hook (lambda ()
+                         ;;(c-turn-on-eldoc-mode 1)
+                         (gtags-mode 1)
+                         ))
 
 ;;; shell mode
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
@@ -14,11 +29,11 @@
 (autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook       (lambda ()
-                                        (paredit-mode t)
-                                        (eldoc-mode t)))
-(add-hook 'lisp-mode-hook             (lambda () (paredit-mode t)))
-(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode t)))
-(add-hook 'scheme-mode-hook           (lambda () (paredit-mode t)))
+                                        (paredit-mode 1)
+                                        (eldoc-mode 1)))
+(add-hook 'lisp-mode-hook             (lambda () (paredit-mode 1)))
+(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode 1)))
+(add-hook 'scheme-mode-hook           (lambda () (paredit-mode 1)))
 
 (eval-after-load 'paredit
   '(progn (define-key paredit-mode-map (kbd "C-w") 'paredit-backward-kill-word)
@@ -31,6 +46,9 @@
 ;;; winner mode
 (winner-mode 1)
 
+;;; flymake
+(require 'flymake)
+
 ;;; yasnippet
 (require 'yasnippet)
 (yas-load-directory "~/.emacs.d/snippets")
@@ -39,13 +57,13 @@
 ;;; go mode
 (require 'go-mode-load)
 (add-hook 'go-mode-hook (lambda ()
-                          (yas-minor-mode t)))
+                          (yas-minor-mode 1)))
 
 ;;; clojure
 (require 'nrepl)
 (add-hook 'nrepl-interaction-mode-hook
           'nrepl-turn-on-eldoc-mode
-          (lambda () (paredit-mode t)))
+          (lambda () (paredit-mode 1)))
 
 ;; common lisp / slime
 (when (file-exists-p "~/quicklisp")
