@@ -18,7 +18,7 @@
 ;;; uniquify buffer names
 (require 'uniquify) 
 ;;; smarter find file at point
-(require 'ffap) 
+(require 'ffap)
 (require 'ansi-color)
 
 ;;; theme stuff

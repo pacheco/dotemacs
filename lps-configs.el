@@ -37,6 +37,9 @@
 (setq-default indent-tabs-mode nil)
 (setq default-tab-width 4)
 
+;;; winner mode on (allows window configuration undo/redo with 'c-c left/right')
+(winner-mode 1)
+
 ;;; nicer buffer naming
 (toggle-uniquify-buffer-names)
 (setq uniquify-buffer-name-style  'forward)
@@ -85,7 +88,9 @@
 ;;; ido-mode
 (ido-mode t)
 (setq ido-enable-flex-matching t
-      ido-enable-prefix nil)
+      ido-enable-prefix nil
+      ido-everywhere t
+      ido-use-filename-at-point 'guess)
 
 (recentf-mode t)
 

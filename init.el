@@ -9,6 +9,8 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+(setq debug-on-error t)
+
 ;;; load path
 (setq dotemacs-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))

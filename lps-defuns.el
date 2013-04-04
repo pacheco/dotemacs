@@ -40,5 +40,16 @@
   (interactive)
   (setq ansi-term-color-vector [unspecified "black" "orange red" "chartreuse" "yellow" "royal blue" "magenta" "turquoise" "white"]))
 
+(defun lps/ede-project-dir ()
+  "Returns root directory for current ede-project"
+  (file-name-directory (oref (ede-current-project) :file)))
+
+(defun lps/generate-gtags ()
+  "Run gnu globals on current ede-project"
+  (interactive)
+  (let ((dir (if (ede-cpp-root-project-p (ede-current-project))
+                 (file-name-directory (oref (ede-current-project) :file))
+               (read-directory-name "Directory to run gtags in: "))))
+    (cedet-gnu-global-create/update-database default-directory)))
 
 (provide 'lps-defuns)
