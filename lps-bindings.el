@@ -6,8 +6,9 @@
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "M-x"))
+(global-unset-key (kbd "M-x")) ; avoid RSI
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
+(global-set-key (kbd "C-x m") 'execute-extended-command) ; no compose mail by mistake!
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-M-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-<") 'previous-window)
