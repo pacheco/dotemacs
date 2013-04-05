@@ -9,6 +9,8 @@
                         jedi)
   "Packages to install from elpa")
 
+(unless package-archive-contents
+  (package-refresh-contents))
 (dolist (package elpa-packages)
   "Install packages from elpa"
   (unless (package-installed-p package)
