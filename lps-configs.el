@@ -68,7 +68,8 @@
 
 ;;; do NOT vertically split windows automatically
 ;;; (split-window-vertically still works)
-(setq split-height-threshold 99999)
+(setq split-height-threshold nil)
+(setq split-width-threshold 160)
 
 ;;; hippie-expand functions
 (setq hippie-expand-try-functions-list '(try-expand-all-abbrevs
@@ -84,6 +85,9 @@
 ;;; put new frames on the top corner
 (add-to-list 'default-frame-alist '(left . 0))
 (add-to-list 'default-frame-alist '(top . 0))
+
+;;; ibuffer
+(setq ibuffer-restore-window-config-on-quit t)
 
 ;;; ido-mode
 (ido-mode t)

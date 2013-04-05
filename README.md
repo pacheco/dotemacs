@@ -1,7 +1,6 @@
 dotemacs
 ========
 
-My emacs config. Check https://github.com/technomancy/emacs-starter-kit for a much more
-complete configuration
+My emacs config. Inspired by https://github.com/technomancy/emacs-starter-kit
 
 See COPYING for licence

@@ -23,27 +23,7 @@
 (global-set-key (kbd "C-x TAB") 'yas-expand)
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
-(global-set-key (kbd "C-x C-b") (lambda () (interactive) (list-buffers t)))
+(global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
-(add-hook 'gtags-mode-hook
-          (lambda ()
-            (define-key gtags-mode-map (kbd "C-S-g") 'gtags-find-tag-from-here)))
-
-(eval-after-load 'slime
-  '(progn (define-key slime-mode-map (kbd ""))))
-
-(eval-after-load 'paredit
-  '(progn (define-key paredit-mode-map (kbd "C-w") 'paredit-backward-kill-word)
-          (define-key paredit-mode-map (kbd "C-h") 'paredit-backward-delete)
-          ;; (define-key paredit-mode-map (kbd "C-<right>") 'forward-word)
-          ;; (define-key paredit-mode-map (kbd "C-<left>") 'backward-word)
-          (define-key paredit-mode-map (kbd "M-<right>") 'paredit-forward-slurp-sexp)
-          (define-key paredit-mode-map (kbd "M-<left>") 'paredit-forward-barf-sexp)))
-
-(add-hook 'c-mode-hook (lambda ()
-                         (define-key (lookup-key semantic-mode-map (kbd "C-c ,")) (kbd "d")
-                           'semantic-ia-show-summary)
-                         (define-key (lookup-key semantic-mode-map (kbd "C-c ,")) (kbd "D")
-                           'semantic-ia-show-doc)))
 
 (provide 'lps-bindings)

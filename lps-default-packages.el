@@ -3,7 +3,10 @@
 (defvar elpa-packages '(c-eldoc
                         yasnippet
                         nrepl
-                        w3m)
+                        w3m
+                        auto-complete
+                        auto-complete-clang
+                        jedi)
   "Packages to install from elpa")
 
 (dolist (package elpa-packages)
