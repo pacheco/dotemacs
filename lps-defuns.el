@@ -36,9 +36,15 @@
 
 
 (defun lps/nicer-ansi-term ()
-  "Change ansi-term color to nicer ones"
+  "Change ansi-term color to nicer ones."
   (interactive)
-  (setq ansi-term-color-vector [unspecified "black" "orange red" "chartreuse" "yellow" "royal blue" "magenta" "turquoise" "white"]))
+  (if (or (< emacs-major-version 24)
+            (and (= emacs-major-version 24) (< emacs-minor-version 3)))
+      (setq ansi-term-color-vector
+            [unspecified "black" "orange red" "chartreuse" "yellow" "royal blue" "magenta" "turquoise" "white"])
+    ;; i'm not sure custom-set-faces is the right way to do it... but it solves the problem
+    (custom-set-faces
+     '(term-color-blue ((t (:background "royal blue" :foreground "royal blue")))))))
 
 (defun lps/ede-project-dir ()
   "Returns root directory for current ede-project"
