@@ -9,4 +9,3 @@
 (semantic-mode 1)
 (global-ede-mode 1)
 (ede-enable-generic-projects)
-(require 'ecb)
