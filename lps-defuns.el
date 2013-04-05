@@ -1,5 +1,11 @@
+;;; lps-defuns --- misc custom functions
+
+;;; Commentary:
+
+;;; Code:
+
 (defun toggle-fullscreen ()
-  "Switch to/from fullscreen"
+  "Switch to/from fullscreen."
   (interactive)
   (set-frame-parameter nil 'fullscreen
                        (if (frame-parameter nil 'fullscreen)
@@ -7,7 +13,7 @@
                          'fullboth)))
 
 (defun toggle-maximize ()
-  "Maximize (or unmaximize) window"
+  "Maximize (or unmaximize) window."
   (interactive)
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
                          '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
@@ -15,7 +21,7 @@
                          '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0)))
 
 (defun previous-window ()
-  "Change to previous window"
+  "Change to previous window."
   (interactive)
   (other-window -1))
 
@@ -27,7 +33,7 @@
       (find-file file))))
 
 (defun pretty-lambdas ()
-  "Change 'lambda's to the lambda symbol"
+  "Change 'lambda's to the lambda symbol."
   (font-lock-add-keywords
    nil `(("(?\\(lambda\\>\\)"
           (0 (progn (compose-region (match-beginning 1) (match-end 1)
@@ -36,7 +42,7 @@
 
 
 (defun lps/nicer-ansi-term ()
-  "Change ansi-term color to nicer ones."
+  "Change 'ansi-term' color to nicer ones."
   (interactive)
   (if (or (< emacs-major-version 24)
             (and (= emacs-major-version 24) (< emacs-minor-version 3)))
@@ -47,11 +53,11 @@
      '(term-color-blue ((t (:background "royal blue" :foreground "royal blue")))))))
 
 (defun lps/ede-project-dir ()
-  "Returns root directory for current ede-project"
+  "Return root directory for current ede-project."
   (file-name-directory (oref (ede-current-project) :file)))
 
 (defun lps/generate-gtags ()
-  "Run gnu globals on current ede-project"
+  "Run gnu globals on current ede-project."
   (interactive)
   (let ((dir (if (ede-cpp-root-project-p (ede-current-project))
                  (file-name-directory (oref (ede-current-project) :file))
@@ -59,3 +65,5 @@
     (cedet-gnu-global-create/update-database default-directory)))
 
 (provide 'lps-defuns)
+
+;;; lps-defuns ends here

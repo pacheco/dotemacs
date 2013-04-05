@@ -1,4 +1,10 @@
-;; Mode specific configs
+;;; lps-modes --- mode specific configs
+
+;;; Commentary:
+;;; setup mode specific configurations.  Last thing it does is load all
+;;; the files inside the modes folder.
+
+;;; Code:
 
 ;;; shell mode
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
@@ -31,6 +37,18 @@
 (require 'ggtags)
 (setq ggtags-global-window-height 15)
 
+;;; flycheck
+(require 'flycheck)
+(add-hook 'after-init-hook 'global-flycheck-mode)
+(eval-after-load 'flycheck
+  '(progn
+     ;; (setq flycheck-checkers (delq 'emacs-lisp-checkdoc flycheck-checkers))
+     ;; (setq flycheck-checkers (delq 'emacs-lisp flycheck-checkers))
+     (set-face-foreground 'flycheck-error-face "red")
+     (set-face-background 'flycheck-error-face "black")
+     (set-face-foreground 'flycheck-warning-face "gold")
+     (set-face-background 'flycheck-warning-face "black")))
+
 ;;; auto-complete
 (require 'auto-complete-config)
 (setq ac-auto-start t
@@ -49,3 +67,4 @@
 (mapcar 'load-file (directory-files (concat dotemacs-dir "modes") t ".*.el"))
 
 (provide 'lps-modes)
+;;; lps-modes ends here

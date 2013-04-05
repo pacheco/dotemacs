@@ -1,8 +1,11 @@
-;;; This is where all the loading/configuration begins
-;;; 
+;;; init.el --- This is where everything starts
+
+;;; Commentary:
 ;;; Inspired by https://github.com/technomancy/emacs-starter-kit
 ;;; 
 ;;; See COPYING for licence
+
+;;; Code:
 
 ;;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -12,8 +15,9 @@
 (setq debug-on-error t)
 
 ;;; load path
-(setq dotemacs-dir (file-name-directory
-                    (or (buffer-file-name) load-file-name)))
+(defconst dotemacs-dir (file-name-directory
+                        (or (buffer-file-name) load-file-name))
+  "Points to my .emacs directory.")
 (add-to-list 'load-path dotemacs-dir)
 (let ((eldir (concat dotemacs-dir "/el")))
   (add-to-list 'load-path eldir)
@@ -41,3 +45,5 @@
 (let ((local-configs-file (concat dotemacs-dir "local.el")))
   (if (file-exists-p local-configs-file)
       (load local-configs-file)))
+
+;;; init.el ends here

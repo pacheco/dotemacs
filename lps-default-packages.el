@@ -6,8 +6,9 @@
                         w3m
                         auto-complete
                         auto-complete-clang
-                        jedi)
-  "Packages to install from elpa")
+                        jedi
+                        flycheck)
+  "Packages to install from elpa.")
 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -26,7 +27,7 @@
 (require 'ffap)
 (require 'ansi-color)
 
-;;; theme stuff
+;;; subatomic theme
 (require 'subatomic-theme-autoloads)
 
 (provide 'lps-default-packages)
