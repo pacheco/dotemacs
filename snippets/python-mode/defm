@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
-# name: def
-# contributor: Orestis Markou
-# contributor: Yasser González Fernández <yglez@uh.cu>
-# key: def
+# name: defm
+# contributor: Yasser Gonz¨¢lez Fern¨¢ndez <yglez@uh.cu>
+# key: defm
 # --
-def ${1:name}($2):
+def ${1:name}(self$2):
     """$3
     ${2:$
-      (let* 
-        ((indent
+    (let* ((indent
             (concat "\n" (make-string (current-column) 32)))
            (args
             (mapconcat
