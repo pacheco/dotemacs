@@ -11,7 +11,7 @@
 (global-set-key (kbd "C-x m") 'execute-extended-command) ; no compose mail by mistake!
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-M-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-<") 'previous-window)
+(global-set-key (kbd "C-<") (lambda () (interactive) (other-window -1)))
 (global-set-key (kbd "C->") 'other-window)
 (global-set-key (kbd "C-x C-d") 'dired)
 (global-set-key (kbd "<f12>") 'toggle-maximize)

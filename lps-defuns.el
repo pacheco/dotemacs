@@ -20,11 +20,6 @@
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
                          '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0)))
 
-(defun previous-window ()
-  "Change to previous window."
-  (interactive)
-  (other-window -1))
-
 (defun recentf-ido-find-file ()
   "Find a recent file using ido."
   (interactive)
