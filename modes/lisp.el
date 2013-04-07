@@ -8,7 +8,7 @@
 ;;; use slime from quicklisp -> (ql:quickload "quicklisp-slime-helper")
 (when (file-exists-p "~/quicklisp")
   (load (expand-file-name "~/quicklisp/slime-helper.el"))
-  (setq inferior-lisp-program "sbcl")
+  (setq inferior-lisp-program "sbcl --dynamic-space-size 2048")
   (setq common-lisp-hyperspec-root "/usr/share/doc/hyperspec/")
   (add-hook 'slime-mode-hook
             (lambda ()
