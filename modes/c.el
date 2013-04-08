@@ -1,3 +1,9 @@
+;;; c.el --- c mode specific configs
+
+;;; Commentary:
+
+;;; Code:
+
 (setq-default c-basic-offset 4)
 (require 'auto-complete-clang)
 (add-hook 'c-mode-hook
@@ -27,4 +33,6 @@
 ;; (require 'c-eldoc)
 ;; (setq c-eldoc-includes " -I./ -I../ -I.../  -I./include/ -I../include/ -I../../include/ -I${HOME}/usr/include/ ")
 ;; (add-hook 'c-mode-hook (lambda () (c-turn-on-eldoc-mode 1)))
+
+;;; c.el ends here
 
