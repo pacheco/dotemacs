@@ -1,4 +1,9 @@
-;; custom keybindings
+;;; lps-bindings.el --- custom keybindings
+
+;;; Commentary:
+;;; general key bindings
+
+;;; Code:
 
 (global-set-key (kbd "M-n") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'backward-paragraph)
@@ -15,7 +20,7 @@
 (global-set-key (kbd "C->") 'other-window)
 (global-set-key (kbd "C-x C-d") 'dired)
 (global-set-key (kbd "<f12>") 'toggle-maximize)
-(global-set-key (kbd "<f10>") (lambda () (interactive) (ansi-term "/bin/bash")))
+(global-set-key (kbd "<f10>") 'lps/shell-other-window)
 (global-set-key (kbd "<f5>") 'first-error)
 (global-set-key (kbd "<f6>") 'recompile)
 (global-set-key (kbd "C-x C-S-f") 'recentf-ido-find-file)
@@ -25,5 +30,6 @@
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
-
 (provide 'lps-bindings)
+
+;;; lps-bindings.el ends here
