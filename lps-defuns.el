@@ -59,21 +59,22 @@
                (read-directory-name "Directory to run gtags in: "))))
     (cedet-gnu-global-create/update-database default-directory)))
 
-(defun lps/shell-other-window (&optional cmd)
+(defun lps/shell-other-window (&optional shell-command new-buffer-name)
   "Start an 'ansi-term' the other window.
-CMD is the command to execute (defaults to bash)."
+SHELL-COMMAND is the command to execute (defaults to bash).
+NEW-BUFFER-NAME is the name of the new buffer."
   (interactive)
-  (let ((thecmd (or cmd "/bin/bash"))
+  (let ((cmd (or shell-command "/bin/bash"))
         (dir default-directory))
     (split-window-sensibly)
     (other-window 1)
     (let ((default-directory dir))
-      (ansi-term thecmd))))
+      (ansi-term cmd new-buffer-name))))
 
 (defun lps/ipython ()
   "Start Ipython on the other window."
   (interactive)
-  (lps/shell-other-window "ipython"))
+  (lps/shell-other-window "ipython" "ipython"))
 
 (provide 'lps-defuns)
 
