@@ -24,4 +24,18 @@
 (add-hook 'lisp-mode-hook             (lambda () (paredit-mode 1)))
 (add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode 1)))
 
+
+(defun lps/slime-abcl ()
+  "Start slime using abcl."
+  (interactive)
+  (let ((inferior-lisp-program "abcl"))
+    (slime)))
+
+(defun lps/slime-clisp ()
+  "Start slime using abcl."
+  (interactive)
+  (let ((inferior-lisp-program "clisp"))
+    (slime)))
+
+
 ;;; lisp.el ends here
