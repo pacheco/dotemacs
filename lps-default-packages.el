@@ -7,7 +7,9 @@
                         auto-complete
                         auto-complete-clang
                         jedi
-                        flycheck)
+                        flycheck
+                        magit
+                        lua-mode)
   "Packages to install from elpa.")
 
 (unless package-archive-contents

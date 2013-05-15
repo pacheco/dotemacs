@@ -34,6 +34,9 @@
      (set-face-foreground 'flycheck-warning-face "gold")
      (set-face-background 'flycheck-warning-face "black")))
 
+;;; magic
+(require 'magit)
+
 ;;; auto-complete
 (require 'auto-complete-config)
 (setq ac-auto-start t
