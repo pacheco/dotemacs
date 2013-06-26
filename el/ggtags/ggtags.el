@@ -164,11 +164,11 @@ Return -1 if it does not exist."
 
 ;;;###autoload
 (defun ggtags-root-directory ()
-  (if (string-or-null-p ggtags-root-directory)
+  (if (stringp ggtags-root-directory)
       ggtags-root-directory
-    (setq ggtags-root-directory
+    (setf ggtags-root-directory
           (with-temp-buffer
-            (when (zerop (call-process "global" nil (list t nil) nil "-pr"))
+            (when (zerop (call-process "global" nil t nil "-pr"))
               (file-name-as-directory
                (comment-string-strip (buffer-string) t t)))))))
 
@@ -252,7 +252,7 @@ When called with prefix, ask the name and kind of tag."
        (format "global %s --from-here=%d:%s \"%s\""
                ggtags-global-options
                (line-number-at-pos)
-               (expand-file-name buffer-file-name)
+               (file-truename buffer-file-name)
                name))
      'ggtags-global-mode)))
 
