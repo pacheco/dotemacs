@@ -1,3 +1,8 @@
+;;; cedet.el -- config for cedet and semantic
+
+;;; Commentary:
+
+;;; Code:
 ;;; cedet and semantic
 (require 'cedet)
 (require 'semantic)
@@ -9,3 +14,5 @@
 (semantic-mode 1)
 (global-ede-mode 1)
 (ede-enable-generic-projects)
+
+;;; cedet.el ends here
