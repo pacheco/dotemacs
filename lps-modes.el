@@ -27,12 +27,6 @@
 
 ;;; flycheck
 (require 'flycheck)
-(eval-after-load 'flycheck
-  '(progn
-     (set-face-foreground 'flycheck-error-face "red")
-     (set-face-background 'flycheck-error-face "black")
-     (set-face-foreground 'flycheck-warning-face "gold")
-     (set-face-background 'flycheck-warning-face "black")))
 
 ;;; magic
 (require 'magit)
