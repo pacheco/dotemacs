@@ -1,49 +1,62 @@
-;;; init.el --- This is where everything starts
-
-;;; Commentary:
-;;; Inspired by https://github.com/technomancy/emacs-starter-kit
-;;; 
-;;; See COPYING for licence
-
-;;; Code:
-
 ;;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-(setq debug-on-error t)
+(setq inhibit-startup-message t)
 
-;;; load path
-(defconst dotemacs-dir (file-name-directory
-                        (or (buffer-file-name) load-file-name))
-  "Points to my .emacs directory.")
-(add-to-list 'load-path dotemacs-dir)
-(let ((eldir (concat dotemacs-dir "/el")))
+;;; lisp dir has my config and lisp code
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
+;;; site-lisp has external lisp code
+(let ((eldir (expand-file-name "site-lisp" user-emacs-directory)))
   (add-to-list 'load-path eldir)
   (let ((default-directory eldir))
     (normal-top-level-add-subdirs-to-load-path)))
 
-;;; setup elpa
-(setq package-user-dir (concat dotemacs-dir "elpa"))
-(require 'package)
-(setq package-archives '(
-			 ;("marmalade" . "http://marmalade-repo.org/packages/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")
-             ("gnu" . "http://elpa.gnu.org/packages/")
-             ))
-(package-initialize)
+;;; LOAD CONFIG FILES
+;;; --------------------
+(require 'init-general) ;; general config
+(require 'init-utils) ;; random utilities/functions
+(require 'init-keys) ;; basic keybindings
+(require 'init-elpa) ;; elpa config
+(require 'init-path) ;; setting exec-path
+(require 'init-theme) ;; appearance
 
-;;; load other configuration files
-(require 'lps-default-packages)
-(require 'lps-configs)
-(require 'lps-defuns)
-(require 'lps-modes)
-(require 'lps-bindings)
+(require 'init-auto-complete)
+(require 'init-windows) ;; winner mode and window stuff
+(require 'init-git)
+(require 'init-org)
 
-;;; local machine specific configurations should be put inside local.el
-(let ((local-configs-file (concat dotemacs-dir "local.el")))
-  (if (file-exists-p local-configs-file)
-      (load local-configs-file)))
+(require 'init-c)
+(require 'init-python)
+(require 'init-paredit)
+(require 'init-elisp)
+(require 'init-lisp)
+(require 'init-go)
+(require 'init-erlang)
+(require 'init-elixir)
+(require 'init-yas)
+(require-package 'lua-mode)
 
-;;; init.el ends here
+; check purcell/init-grep
+; check purcell/init-sessions
+; check purcell/init-erlang
+
+
+;;; --------------------
+
+;;; start emacs server
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
+;;; load local config file if it exists
+(let ((local-config (expand-file-name "local.el" user-emacs-directory)))
+  (when (file-exists-p local-config)
+    (load local-config)))
+
+;;; put 'customize' variables into a separate file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))

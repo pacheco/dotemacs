@@ -1,7 +1,0 @@
-package ${1:`(file-name-nondirectory (directory-file-name (file-name-directory (buffer-file-name))))`}
-
-import (
-"testing"
-)
-
-$0

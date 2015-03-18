@@ -1,3 +1,4 @@
+custom.el
 backups/*
 auto-save-list
 *elc
@@ -10,7 +11,6 @@ oddmuse/*
 .DS_Store
 image-dired/
 elpa/
-session*
 tramp
 \#*
 history
@@ -19,3 +19,4 @@ semanticdb/*
 ede-projects.el
 srecode-map.el
 ac-comphist.dat
+/.session
