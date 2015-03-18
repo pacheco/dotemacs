@@ -2,6 +2,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;; display useful stuff
+(global-font-lock-mode 1)
 (display-time-mode 0)
 (line-number-mode 1)
 (column-number-mode 1)
@@ -27,16 +28,20 @@
 (mwheel-install)
 
 ;;; editing
+(setq fill-column 80)
 (transient-mark-mode -1)
 (setq-default indent-tabs-mode nil)
 (setq default-tab-width 4)
-;(delete-selection-mode 1)
+(delete-selection-mode 1)
 (setq-default save-interprogram-paste-before-kill t)
 (setq-default scroll-preserve-screen-position 'always)
+;(global-subword-mode 1)
 
 ;;; always use UTF-8
+(setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
 ;;; automatically add newline to end of files
@@ -50,6 +55,9 @@
 
 ;;; no backup files all around, put them all into same directory under home
 (setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
+
+;;; move files to trash when deleting
+(setq delete-by-moving-to-trash t)
 
 ;;; enable commands
 (put 'narrow-to-defun 'disabled nil)
@@ -79,8 +87,12 @@
 ;;; recently opened files
 (require 'recentf)
 (recentf-mode 1)
-(setq recentf-max-saved-items 1000
+(setq recentf-max-saved-items 100
       recentf-exclude '("/tmp/" "/ssh:"))
+
+;; save minibuffer history
+(savehist-mode 1)
+(setq history-length 1000)
 
 ;;; smarter find file at point
 (require 'ffap)

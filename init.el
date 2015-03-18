@@ -41,8 +41,7 @@
 
 ; check purcell/init-grep
 ; check purcell/init-sessions
-; check purcell/init-erlang
-
+; check undo-tree global-undo-tree-mode
 
 ;;; --------------------
 
