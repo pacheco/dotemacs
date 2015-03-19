@@ -6,7 +6,7 @@
 
 (eval-after-load 'yasnippet
   '(progn
-     (yas-reload-all)
+     ;(yas-reload-all)
      (define-key yas-minor-mode-map (kbd "C-c <tab>") 'yas-expand)
      (define-key yas-minor-mode-map (kbd "<tab>") nil)
      (define-key yas-minor-mode-map (kbd "TAB") nil)))
