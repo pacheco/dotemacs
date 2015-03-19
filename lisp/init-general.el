@@ -57,7 +57,7 @@
       (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)))
 
 ;;; no backup files all around, put them all into same directory under home
-(setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
+(setq backup-directory-alist `((".*" . ,(expand-file-name "backups" user-emacs-directory))))
 
 ;;; move files to trash when deleting
 (setq delete-by-moving-to-trash t)
