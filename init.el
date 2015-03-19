@@ -41,6 +41,7 @@
 (require 'init-latex)
 (require-package 'lua-mode)
 
+; check jwiegley/use-package
 ; check purcell/init-grep
 ; check purcell/init-sessions
 ; check undo-tree global-undo-tree-mode
