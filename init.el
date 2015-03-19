@@ -38,6 +38,7 @@
 (require 'init-erlang)
 (require 'init-elixir)
 (require 'init-yas)
+(require 'init-latex)
 (require-package 'lua-mode)
 
 ; check purcell/init-grep
