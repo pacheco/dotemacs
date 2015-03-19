@@ -15,15 +15,6 @@
       (find-file file))))
 
 
-(defun pretty-lambdas ()
-  "Change 'lambda's to the lambda symbol."
-  (font-lock-add-keywords
-   nil `(("(?\\(lambda\\>\\)"
-          (0 (progn (compose-region (match-beginning 1) (match-end 1)
-                                    ,(make-char 'greek-iso8859-7 107))
-                    nil))))))
-
-
 ;;; http://www.emacswiki.org/emacs/ZapToISearch
 (defun zap-to-isearch (rbeg rend)
   "Kill the region between the mark and the closest portion of
@@ -59,5 +50,13 @@ and the point, not include the isearch word."
   (let ((prev-pos (point)))
     (back-to-indentation)
     (kill-region (point) prev-pos)))
+
+
+(defun lps/start-term-here (&optional path)
+  "Start an external terminal at the current buffer's directory"
+  (interactive)
+  (let ((path (or path default-directory)))
+    (call-process "terminator" nil 0 nil "--working-directory" path)))
+
 
 (provide 'init-utils)

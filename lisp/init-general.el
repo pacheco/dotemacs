@@ -27,6 +27,9 @@
 (setq mouse-yank-at-point t)
 (mwheel-install)
 
+;;; need to require dired for dired-jump
+(require 'dired)
+
 ;;; editing
 (setq fill-column 80)
 (transient-mark-mode -1)
