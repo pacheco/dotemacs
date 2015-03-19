@@ -1,9 +1,16 @@
 (require-package 'ggtags)
 (require-package 'cedet)
 
+(setq-default c-basic-offset 4)
+
+;;; GDB config
+(setq-default gdb-many-windows 1)
+
+;;; completion using sematic
 (require 'semantic)
 
-(setq-default c-basic-offset 4)
+(semantic-add-system-include "~/usr/include/")
+
 (global-semanticdb-minor-mode 1)
 (global-semantic-idle-scheduler-mode 1)
 
