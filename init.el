@@ -23,7 +23,7 @@
 (require 'init-path) ;; setting exec-path
 (require 'init-theme) ;; appearance
 
-(require 'init-auto-complete)
+(require 'init-company)
 (require 'init-ag)
 (require 'init-windows) ;; winner mode and window stuff
 (require 'init-git)

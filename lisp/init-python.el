@@ -1,15 +1,9 @@
-;;; remember to install python modules: pylint pyflakes flake8 jedi epc
-(require-package 'epc)
-(require-package 'python-environment)
-(require-package 'jedi)
-
-(require 'jedi)
-(setq jedi:complete-on-dot t)
+(require-package 'anaconda-mode)
+(require-package 'company-anaconda)
 
 (add-hook 'python-mode-hook
           (lambda ()
-            (jedi:setup)
-            (setq ac-sources '(ac-source-jedi-direct ac-source-words-in-same-mode-buffers))))
-
+            (anaconda-mode 1)
+            (add-to-list 'company-backends 'company-anaconda)))
 
 (provide 'init-python)
