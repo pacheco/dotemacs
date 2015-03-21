@@ -14,7 +14,7 @@
 (global-set-key (kbd "C-x C-d") 'dired)
 (global-set-key (kbd "C-x C-D") 'dired-jump)
 (global-set-key (kbd "<f12>") 'ibuffer)
-(global-set-key (kbd "<f11>") 'lps/start-term-here)
+(global-set-key (kbd "<f10>") 'lps/start-term-here)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "<f5>") 'first-error)
 (global-set-key (kbd "<f6>") 'recompile)
