@@ -41,6 +41,7 @@
 (require 'init-latex)
 (require-package 'lua-mode)
 (require-package 'markdown-mode)
+(require-package 'protobuf-mode)
 
 ; check jwiegley/use-package
 ; check purcell/init-grep
