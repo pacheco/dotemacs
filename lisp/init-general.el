@@ -74,6 +74,9 @@
 (setq split-height-threshold nil)
 (setq split-width-threshold 160)
 
+;;; auto-revert DocView mode
+(add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
 ;;; ibuffer
 (setq ibuffer-restore-window-config-on-quit t)
 
