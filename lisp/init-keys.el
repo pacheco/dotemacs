@@ -25,7 +25,8 @@
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (autoload 'zap-up-to-char "misc" "Kill up to, but not including ARGth occurrence of CHAR.")
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
-(define-key global-map (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "<f8>") 'org-agenda)
+(global-set-key (kbd "<f9>") 'org-cycle-agenda-files)
 
 
 (provide 'init-keys)
