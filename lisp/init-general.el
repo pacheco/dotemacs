@@ -36,7 +36,7 @@
 ;;; editing
 (setq-default kill-whole-line t) ; kill-line kills also newline if at beginning of the line
 (setq fill-column 80)
-(transient-mark-mode -1)
+(transient-mark-mode 1)
 (setq-default indent-tabs-mode nil)
 (setq default-tab-width 4)
 (delete-selection-mode 1)
