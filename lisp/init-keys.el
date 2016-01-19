@@ -27,6 +27,7 @@
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
 (global-set-key (kbd "<f8>") 'org-agenda)
 (global-set-key (kbd "<f9>") 'org-cycle-agenda-files)
+(global-set-key (kbd "C-=") 'text-scale-increase)
 
 
 (provide 'init-keys)
