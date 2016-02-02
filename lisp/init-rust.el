@@ -1,0 +1,1 @@
+(require-package 'rust-mode)

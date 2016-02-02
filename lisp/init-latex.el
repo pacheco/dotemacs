@@ -3,6 +3,4 @@
 
 (company-auctex-init)
 
-(require 'auctex-autoloads)
-
 (provide 'init-latex)
