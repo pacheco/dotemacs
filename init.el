@@ -45,6 +45,7 @@
 (require-package 'markdown-mode)
 (require-package 'protobuf-mode)
 (require-package 'cmake-mode)
+(require-package 'toml-mode)
 
 ; check jwiegley/use-package
 ; check purcell/init-grep
