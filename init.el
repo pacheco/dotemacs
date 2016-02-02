@@ -39,6 +39,8 @@
 (require 'init-elixir)
 (require 'init-yas)
 (require 'init-latex)
+(require 'init-scala)
+(require 'init-rust)
 (require-package 'lua-mode)
 (require-package 'markdown-mode)
 (require-package 'protobuf-mode)
