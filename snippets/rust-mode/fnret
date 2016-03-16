@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: fnret
+# key: fnret
+# expand-env: ((yas-indent-line 'fixed))
+# --
+fn ${1:func}($2) -> ${3:ReturnType} {
+    $0
+}

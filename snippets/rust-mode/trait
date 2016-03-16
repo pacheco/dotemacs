@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: trait
+# key: trait
+# expand-env: ((yas-indent-line 'fixed))
+# --
+trait ${1:Type} {
+    $0
+}

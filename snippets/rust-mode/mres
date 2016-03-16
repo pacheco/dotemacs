@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: mres
+# key: mres
+# expand-env: ((yas-indent-line 'fixed))
+# --
+match $1 {
+    Ok($2) => {
+        $0
+    }
+    Err($3) => {
+        
+    }
+}

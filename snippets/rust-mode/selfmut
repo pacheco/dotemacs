@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: selfmut
+# key: selfmut
+# expand-env: ((yas-indent-line 'fixed))
+# --
+fn ${1:func}(&mut self$2) {
+    $0
+}

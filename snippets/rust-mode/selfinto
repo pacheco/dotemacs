@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: selfinto
+# key: selfinto
+# expand-env: ((yas-indent-line 'fixed))
+# --
+fn ${1:func}(self$2) -> ${3:ReturnType} {
+    $0
+}

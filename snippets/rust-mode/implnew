@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: implnew
+# key: implnew
+# expand-env: ((yas-indent-line 'fixed))
+# --
+impl ${1:Type} {
+    /// create a new \`$1\`
+    fn new($2) -> $1 {
+        $1 {
+           $0
+        }
+    }
+}

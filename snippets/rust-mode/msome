@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: msome
+# key: msome
+# expand-env: ((yas-indent-line 'fixed))
+# --
+match $1 {
+    Some($2) => {
+        $0
+    }
+    None => {
+        
+    }
+}

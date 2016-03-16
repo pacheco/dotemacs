@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: enum
+# key: enum
+# expand-env: ((yas-indent-line 'fixed))
+# --
+enum ${1:Enum} {
+    ${2:One},
+    ${3:Two},
+}
