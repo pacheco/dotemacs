@@ -3,4 +3,8 @@
 
 (company-auctex-init)
 
+(add-hook 'latex-mode-hook
+          (lambda ()
+            (semantic-mode nil)))
+
 (provide 'init-latex)
