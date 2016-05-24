@@ -3,6 +3,7 @@
 ;;
 
 (require-package 'go-mode)
+(require-package 'company-go)
 
 (add-hook 'go-mode-hook
           (lambda ()
