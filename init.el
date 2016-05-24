@@ -41,12 +41,14 @@
 (require 'init-latex)
 (require 'init-scala)
 (require 'init-rust)
+(require 'init-clojure)
 (require-package 'lua-mode)
 (require-package 'markdown-mode)
 (require-package 'protobuf-mode)
 (require-package 'cmake-mode)
 (require-package 'toml-mode)
 
+; check projectile
 ; check jwiegley/use-package
 ; check purcell/init-grep
 ; check purcell/init-sessions
