@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: beamercolorbox
+# key: bcb
+# --
+\begin{beamercolorbox}[]{$1}
+  $0
+\end{beamercolorbox}
