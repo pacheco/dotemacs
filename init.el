@@ -20,7 +20,7 @@
 (require 'init-utils) ;; random utilities/functions
 (require 'init-keys) ;; basic keybindings
 (require 'init-elpa) ;; elpa config
-(require 'init-path) ;; setting exec-path
+(require 'init-env) ;; loading env vars
 (require 'init-theme) ;; appearance
 
 (require 'init-company)

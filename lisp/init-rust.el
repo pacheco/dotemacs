@@ -2,7 +2,9 @@
 (require-package 'racer)
 
 (setq racer-cmd (expand-file-name "~/.cargo/bin/racer"))
-(setq racer-rust-src-path (expand-file-name "~/usr/rustc/src"))
+
+(setq racer-rust-src-path (expand-file-name "~/usr/rust-stable/src"))
+;; (setq racer-rust-src-path (expand-file-name "~/usr/rust-git/src"))
 
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)

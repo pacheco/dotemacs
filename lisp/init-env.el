@@ -10,9 +10,10 @@
                "LD_LIBRARY_PATH"
                "LD_LIBRARY_PATH"
                "C_INCLUDE_PATH"
-               "CPLUS_INCLUDE_PATH"))
+               "CPLUS_INCLUDE_PATH"
+               "CARGO_HOME"))
   (add-to-list 'exec-path-from-shell-variables var))
 
 (exec-path-from-shell-initialize)
 
-(provide 'init-path)
+(provide 'init-env)
