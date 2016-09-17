@@ -42,6 +42,7 @@
 (require 'init-scala)
 (require 'init-rust)
 (require 'init-clojure)
+(require 'init-capnp)
 (require-package 'lua-mode)
 (require-package 'markdown-mode)
 (require-package 'protobuf-mode)
