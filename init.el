@@ -48,6 +48,7 @@
 (require-package 'protobuf-mode)
 (require-package 'cmake-mode)
 (require-package 'toml-mode)
+(require-package 'yaml-mode)
 
 ; check projectile
 ; check jwiegley/use-package
