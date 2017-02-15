@@ -43,12 +43,25 @@
 (require 'init-rust)
 (require 'init-clojure)
 (require 'init-capnp)
+(require 'init-jabber)
+
 (require-package 'lua-mode)
 (require-package 'markdown-mode)
 (require-package 'protobuf-mode)
 (require-package 'cmake-mode)
 (require-package 'toml-mode)
 (require-package 'yaml-mode)
+
+(require 'nnir)
+(require 'epa)
+(require 'epa-file)
+(epa-file-enable)
+
+;;; bbdb
+(require-package 'bbdb)
+(bbdb-initialize 'gnus 'message)
+(setq bbdb-north-american-phone-numbers-p nil)
+(setq bbdb/news-auto-create-p t)
 
 ; check projectile
 ; check jwiegley/use-package
