@@ -59,6 +59,7 @@
 (require-package 'cmake-mode)
 (require-package 'toml-mode)
 (require-package 'yaml-mode)
+(require-package 'dumb-jump)
 
 (require 'nnir)
 (require 'epa)

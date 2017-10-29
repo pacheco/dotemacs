@@ -28,6 +28,7 @@
 (global-set-key (kbd "<f8>") 'org-agenda)
 (global-set-key (kbd "<f9>") 'org-cycle-agenda-files)
 (global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C-M-.") 'dumb-jump-go)
 
 
 (provide 'init-keys)

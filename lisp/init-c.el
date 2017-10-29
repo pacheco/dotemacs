@@ -18,6 +18,7 @@
             (setq company-backends (delete 'company-semantic company-backends))
             ;(ggtags-mode 1)
             (local-set-key (kbd "C-h") 'c-electric-backspace)
+            (local-set-key (kbd "M-.") 'dumb-jump-go)
             (setq c-auto-newline nil)
             ;(c-toggle-hungry-state 1)
             (c-set-offset 'statement-case-open 0)))
