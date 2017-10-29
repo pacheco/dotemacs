@@ -1,6 +1,7 @@
 (require-package 'tuareg)
 (require-package 'merlin)
 (require-package 'ocp-indent)
+(require-package 'utop)
 
 (add-hook 'tuareg-mode-hook 'merlin-mode)
 (add-hook 'caml-mode-hook 'merlin-mode)
