@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: implfut
+# key: implfut
+# --
+impl Future for ${1:Type} {
+    type Item = ${2:()};
+    type Error = ${3:Error};
+
+    fn poll(&mut self) -> Poll<Self::Item, Self::Error> {
+        $0
+    }
+}
