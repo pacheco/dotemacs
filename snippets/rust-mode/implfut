@@ -2,9 +2,9 @@
 # name: implfut
 # key: implfut
 # --
-impl Future for ${1:Type} {
-    type Item = ${2:()};
-    type Error = ${3:Error};
+impl$2 Future for ${1:Type}${2:} {
+    type Item = ${3:()};
+    type Error = ${4:Error};
 
     fn poll(&mut self) -> Poll<Self::Item, Self::Error> {
         $0

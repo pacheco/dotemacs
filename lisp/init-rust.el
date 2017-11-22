@@ -4,6 +4,10 @@
 ;;; ---------------------------
 (require-package 'racer)
 
+(font-lock-add-keywords 'rust-mode
+                        '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))
+
+
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'rust-mode-hook #'electric-pair-mode)
 (add-hook 'racer-mode-hook #'company-mode)
