@@ -60,6 +60,7 @@
 (require-package 'toml-mode)
 (require-package 'yaml-mode)
 (require-package 'dumb-jump)
+(require-package 'academic-phrases)
 
 (require 'nnir)
 (require 'epa)

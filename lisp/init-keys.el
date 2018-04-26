@@ -14,8 +14,6 @@
 (global-set-key (kbd "C->") 'other-window)
 (global-set-key (kbd "C-x C-d") 'dired)
 (global-set-key (kbd "C-x C-D") 'dired-jump)
-(global-set-key (kbd "<f12>") 'ibuffer)
-(global-set-key (kbd "<f10>") 'lps/start-term-here)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "<f5>") 'first-error)
 (global-set-key (kbd "<f6>") 'recompile)
@@ -28,6 +26,9 @@
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
 (global-set-key (kbd "<f8>") 'org-agenda)
 (global-set-key (kbd "<f9>") 'org-cycle-agenda-files)
+(global-set-key (kbd "<f10>") (lambda () (interactive) (remember nil)))
+;; (global-set-key (kbd "<f10>") 'lps/start-term-here)
+(global-set-key (kbd "<f12>") 'ibuffer)
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C-M-.") 'dumb-jump-go)
 

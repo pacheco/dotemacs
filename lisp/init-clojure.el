@@ -2,16 +2,17 @@
 (require-package 'clojure-mode-extra-font-locking)
 (require-package 'cider)
 
-(add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojurescript-mode))
 
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
-(add-hook 'clojure-mode-hook 'eldoc-mode)
+;;(add-hook 'clojure-mode-hook 'eldoc-mode)
 ;;(add-hook 'clojure-mode-hook 'subword-mode)
 
 (add-hook 'clojure-mode-hook
           (lambda ()
             (setq inferior-lisp-program "lein repl")
-            (setq eldoc-documentation-function 'cider-eldoc)))
+            ;; (setq eldoc-documentation-function 'cider-eldoc)
+            ))
 
 
 (add-hook 'cider-mode-hook 'enable-paredit-mode)
