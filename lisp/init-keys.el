@@ -1,6 +1,5 @@
 (global-set-key (kbd "M-n") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'backward-paragraph)
-(global-set-key (kbd "M-o") 'switch-window)
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "C-h") 'backward-delete-char)
@@ -19,7 +18,6 @@
 (global-set-key (kbd "<f6>") 'recompile)
 (global-set-key (kbd "C-x C-S-f") 'recentf-ido-find-file)
 (global-set-key (kbd "M-/") 'hippie-expand)
-(global-set-key (kbd "C-x TAB") 'yas-expand)
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (autoload 'zap-up-to-char "misc" "Kill up to, but not including ARGth occurrence of CHAR.")
@@ -27,10 +25,11 @@
 (global-set-key (kbd "<f8>") 'org-agenda)
 (global-set-key (kbd "<f9>") 'org-cycle-agenda-files)
 (global-set-key (kbd "<f10>") (lambda () (interactive) (remember nil)))
-;; (global-set-key (kbd "<f10>") 'lps/start-term-here)
 (global-set-key (kbd "<f12>") 'ibuffer)
 (global-set-key (kbd "C-=") 'text-scale-increase)
-(global-set-key (kbd "C-M-.") 'dumb-jump-go)
 
+;; (global-set-key (kbd "<f10>") 'lps/start-term-here)
+;; (global-set-key (kbd "C-x TAB") 'yas-expand)
+;; (global-set-key (kbd "C-M-.") 'dumb-jump-go)
 
 (provide 'init-keys)

@@ -15,23 +15,22 @@
 (setq indicate-empty-lines t)
 (setq visible-bell t)
 (setq-default show-trailing-whitespace t)
-
-;;; nicer buffer naming
-(require 'uniquify)
-
-(toggle-uniquify-buffer-names)
-(setq uniquify-buffer-name-style 'forward)
-(setq uniquify-after-kill-buffer-p t)
-(setq uniquify-ignore-buffers-re "^\\*")
-
 ;;; show tooltips inside the echo area
 (tooltip-mode -1)
 
+;;; nicer buffer naming
+(use-package uniquify
+  :config
+  (toggle-uniquify-buffer-names)
+  (setq uniquify-buffer-name-style 'forward)
+  (setq uniquify-after-kill-buffer-p t)
+  (setq uniquify-ignore-buffers-re "^\\*"))
+
 (setq mouse-yank-at-point t)
-(mwheel-install)
+;; (mwheel-install)
 
 ;;; need to require dired for dired-jump
-(require 'dired)
+(use-package dired)
 
 ;;; editing
 (setq-default kill-whole-line t) ; kill-line kills also newline if at beginning of the line
@@ -81,28 +80,31 @@
 (setq ibuffer-restore-window-config-on-quit t)
 
 ;;; ido-mode
-(ido-mode 1)
-(ido-everywhere 1)
-(setq ido-enable-flex-matching t
-      ido-enable-prefix nil
-      ; ido-use-virtual-buffers nil ;; option to show recentf when switching buffers
-      ido-use-filename-at-point nil)
+(use-package ido
+  :config
+  (ido-mode 1)
+  (ido-everywhere 1)
+  (setq ido-enable-flex-matching t
+        ido-enable-prefix nil
+        ;; ido-use-virtual-buffers nil ;; option to show recentf when switching buffers
+        ido-use-filename-at-point nil))
 
 ;;; compilation window points to first error
 (setq-default compilation-scroll-output 'first-error)
 
 ;;; recently opened files
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-saved-items 100
-      recentf-exclude '("/tmp/" "/ssh:"))
+(use-package recentf
+  :config
+  (recentf-mode 1)
+  (setq recentf-max-saved-items 100
+        recentf-exclude '("/tmp/" "/ssh:")))
 
 ;; save minibuffer history
 (savehist-mode 1)
 (setq history-length 1000)
 
 ;;; smarter find file at point
-(require 'ffap)
+(use-package ffap)
 
 ;;; hippie expand
 (setq hippie-expand-try-functions-list '(try-complete-file-name-partially

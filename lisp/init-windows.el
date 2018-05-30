@@ -2,10 +2,12 @@
 (winner-mode 1)
 
 ;;; for switching between >2 windows
-(require-package 'switch-window)
-(require 'switch-window)
-(setq switch-window-shortcut-style 'keyboard)
-(global-set-key (kbd "C-x o") 'switch-window)
+(use-package switch-window
+  :ensure t
+  :config
+  (setq switch-window-shortcut-style 'keyboard)
+  :bind (("C-x o" . switch-window)
+         ("M-o" . switch-window)))
 
 (provide 'init-windows)
 

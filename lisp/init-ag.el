@@ -1,7 +1,9 @@
-(when (executable-find "ag") ; install silversearcher-ag
-  (require-package 'ag)
+(use-package ag
+  :if (executable-find "ag")
+  :ensure t
+  :config
   (setq-default ag-highlight-search t)
-  (global-set-key (kbd "C-?") 'ag-regexp)
-  (global-set-key (kbd "C-M-?") 'ag-project))
+  :bind (("C-?" . ag-regexp)
+         ("C-M-?" . ag-project)))
 
 (provide 'init-ag)

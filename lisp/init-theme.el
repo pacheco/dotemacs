@@ -1,9 +1,9 @@
 ;; (set-default-font "DejaVu Sans Mono-13")
-(set-default-font "Monaco-13")
+;; (set-default-font "Monaco-12")
 ;; (set-default-font "Noto Mono-13")
 ;; (set-default-font "Liberation Mono-13")
 ;; (set-default-font "Inconsolata-15")
-;; (set-default-font "ProggyCleanTTSZ-12.5")
+(set-default-font "ProggyCleanTTSZ-12.5")
 
 ;; (require-package 'color-theme-sanityinc-solarized)
 ;; (require-package 'zenburn-theme)
@@ -74,13 +74,16 @@
 ;; (load-theme 'sanityinc-solarized-dark t)
 ;; (load-theme 'flatland t)
 
-(load-theme 'nord t)
-(custom-theme-set-faces
- 'nord
- ;; '(font-lock-comment-face ((t (:foreground "SlateGray4"))))
- '(font-lock-comment-face ((t (:foreground "LightCyan4"))))
- '(font-lock-variable-name-face ((t (:foreground "SlateGray1"))))
- '(font-lock-doc-face ((t (:foreground "aquamarine"))))
- '(trailing-whitespace ((t (:background "light blue")))))
+(use-package nord-theme
+  :ensure t
+  :config
+  (load-theme 'nord t)
+  (custom-theme-set-faces
+   'nord
+   ;; '(font-lock-comment-face ((t (:foreground "SlateGray4"))))
+   '(font-lock-comment-face ((t (:foreground "LightCyan4"))))
+   '(font-lock-variable-name-face ((t (:foreground "SlateGray1"))))
+   '(font-lock-doc-face ((t (:foreground "aquamarine"))))
+   '(trailing-whitespace ((t (:background "light blue"))))))
 
 (provide 'init-theme)
