@@ -72,10 +72,13 @@
 (require 'init-paredit)
 (require 'init-elisp)
 
-(use-package lsp-mode :ensure t)
-(use-package company-lsp :ensure t
-  :config
-  (add-to-list 'company-backends 'company-lsp))
+;; language server protocol support
+(use-package eglot
+  :ensure t)
+;; (use-package lsp-mode :ensure t)
+;; (use-package company-lsp :ensure t
+;;   :config
+;;   (add-to-list 'company-backends 'company-lsp))
 
 (require 'init-c)
 (require 'init-rust)
