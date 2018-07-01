@@ -32,11 +32,11 @@
 
 ;;; Run "lsp-cquery-enable" in a buffer for some c/c++ project configured to use cquery.
 ;;; It should have a "compile_commands.json" or ".cquery" in the project root.
-(use-package cquery
-  :if (executable-find "cquery")
-  :ensure t
-  :config
-  (setq cquery-extra-init-params '(:index (:comments 2) :cacheFormat "msgpack")))
+;; (use-package cquery
+;;   :if (executable-find "cquery")
+;;   :ensure t
+;;   :config
+;;   (setq cquery-extra-init-params '(:index (:comments 2) :cacheFormat "msgpack")))
 
 
 ;;; hooks
