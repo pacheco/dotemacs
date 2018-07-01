@@ -24,7 +24,8 @@
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
 (global-set-key (kbd "<f8>") 'org-agenda)
 (global-set-key (kbd "<f9>") 'org-cycle-agenda-files)
-(global-set-key (kbd "<f10>") (lambda () (interactive) (remember nil)))
+(global-set-key (kbd "<f10>") 'org-capture)
+;; (global-set-key (kbd "<f10>") (lambda () (interactive) (remember nil)))
 (global-set-key (kbd "<f12>") 'ibuffer)
 (global-set-key (kbd "C-=") 'text-scale-increase)
 
