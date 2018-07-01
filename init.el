@@ -55,19 +55,22 @@
 (require 'init-general) ;; general config
 (require 'init-utils) ;; random utilities/functions
 (require 'init-keys) ;; basic keybindings
-(require 'init-org)
 (require 'init-env) ;; loading env vars
 (require 'init-theme) ;; appearance
+(require 'init-windows) ;; winner mode and other window related stuff
 
+(require 'init-org)
+(require 'init-yas)
 (require 'init-company)
 (require 'init-rg)
 ;; (require 'init-ag)
-(require 'init-windows) ;; winner mode and other window related stuff
+
+;; (use-package sr-speedbar
+;;   :ensure t)
+
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status)))
-
-(require 'init-yas)
 
 (require 'init-paredit)
 (require 'init-elisp)
@@ -75,6 +78,7 @@
 ;; language server protocol support
 (use-package eglot
   :ensure t)
+
 ;; (use-package lsp-mode :ensure t)
 ;; (use-package company-lsp :ensure t
 ;;   :config
