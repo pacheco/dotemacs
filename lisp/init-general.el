@@ -37,7 +37,7 @@
 (setq fill-column 80)
 (transient-mark-mode 1)
 (setq-default indent-tabs-mode nil)
-(setq default-tab-width 4)
+(setq-default tab-width 4)
 (delete-selection-mode 1)
 (setq-default save-interprogram-paste-before-kill t)
 (setq-default scroll-preserve-screen-position 'always)
